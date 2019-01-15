@@ -7,7 +7,11 @@ def is_multiple_of_3_or_5?(num)
 end
 
 def sum_of_3_or_5_multiples(num)
-  sum = 0
-  num.times { |i| sum += i if is_multiple_of_3_or_5?(i) }
-  sum
+  if !(num.is_a?(Integer)) || num < 0
+    return 'Yo ! Je ne prends que les entiers naturels. TG'
+  else
+    sum = 0
+    num.times { |i| sum += i if is_multiple_of_3_or_5?(i) }
+    sum
+  end
 end
